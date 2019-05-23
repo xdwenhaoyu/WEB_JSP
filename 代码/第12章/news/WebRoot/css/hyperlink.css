@@ -1,0 +1,50 @@
+BODY {
+	BACKGROUND-COLOR: lightgray;
+}
+#tabsJ {
+	BORDER-BOTTOM: #24618e 1px solid;
+	LINE-HEIGHT: normal;
+	WIDTH: 950px;
+	BACKGROUND: #f4f4f4;
+	FONT-SIZE: 14px;
+	margin-right: auto;
+	margin-left: auto;
+	position: relative;
+	height: 181px;
+}
+#tabsJ UL {
+	PADDING-BOTTOM: 0px; LIST-STYLE-TYPE: none; MARGIN: 0px; PADDING-LEFT: 50px; PADDING-RIGHT: 10px; PADDING-TOP: 10px
+}
+#tabsJ LI {
+	MARGIN: 0px;
+	DISPLAY: inline;
+	padding: 0px;
+	float: left;
+}
+#tabsJ A {
+	PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 5px; PADDING-RIGHT: 0px; BACKGROUND: url(../cssimage/tableftJ.gif) no-repeat left top; FLOAT: left; TEXT-DECORATION: none; PADDING-TOP: 0px
+}
+#tabsJ A SPAN {
+	PADDING-BOTTOM: 4px; PADDING-LEFT: 6px; PADDING-RIGHT: 15px; DISPLAY: block; BACKGROUND: url(../cssimage/tabrightJ.gif) no-repeat right top; FLOAT: left; COLOR: #24618e; PADDING-TOP: 5px
+}
+#tabsJ A SPAN {
+	FLOAT: none
+}
+#tabsJ A:hover SPAN {
+	COLOR: #fff;
+	background-color: #F90;
+}
+#tabsJ A:hover {
+	BACKGROUND-POSITION: 0% -42px
+}
+#tabsJ A:hover SPAN {
+	BACKGROUND-POSITION: 100% -42px
+}
+#tabsJ #current A {
+	BACKGROUND-POSITION: 0% -42px
+}
+#tabsJ #current A SPAN {
+	BACKGROUND-POSITION: 100% -42px;
+	COLOR: #fff;
+	background-color: #F90;
+}

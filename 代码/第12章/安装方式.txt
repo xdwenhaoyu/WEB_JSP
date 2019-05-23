@@ -1,0 +1,3 @@
+1，在SQL server数据库中创建一个数据库，名为：db_news
+2，在SQL server中执行db_news.sql文件中的sql脚本
+3，配置news文件夹中Web文件，注意根据情况调试其中的数据库连接字符串等配置。

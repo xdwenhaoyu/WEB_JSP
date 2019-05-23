@@ -1,0 +1,112 @@
+.container {
+	BORDER-BOTTOM: #000000 0px solid;
+	BORDER-LEFT: #000000 0px solid;
+	WIDTH: 950px;
+	OVERFLOW: hidden;
+	BORDER-TOP: #000000 0px solid;
+	BORDER-RIGHT: #000000 0px solid;
+	margin-top: 0px;
+	margin-right: auto;
+	margin-bottom: 0px;
+	margin-left: auto;
+	height: 1300px;
+}
+.conContainer {
+	BORDER-BOTTOM: #000000 0px solid; BORDER-LEFT: #000000 0px solid; BACKGROUND-COLOR: white; MARGIN: 0px auto; WIDTH: 950px; BORDER-TOP: #000000 0px solid; BORDER-RIGHT: #000000 0px solid
+}
+BODY {
+	TEXT-ALIGN: center; FONT: 12px/150% Helvetica,Tahoma,Arial,sans-serif; COLOR: #000000
+}
+.pagecon_layer1 {
+	POSITION: relative; MARGIN-TOP: 0px; WIDTH: 950px; BACKGROUND: url(http://csdnimg.cn/www/images/csdnindex_pic6.gif) repeat-y 0px 0px; FLOAT: left
+}
+.pagecon_layer2_full_ad {
+	BACKGROUND-COLOR: white;
+	WIDTH: 950px;
+	FLOAT: left;
+	margin-top: 5px;
+	margin-right: 0px;
+	margin-bottom: 5px;
+	margin-left: 0px;
+}
+.pagecon_layer1_left {
+	WIDTH: 528px; FLOAT: left; HEIGHT: 215px
+}
+.pagecon_layer1_rig {
+	WIDTH: 417px; FLOAT: right
+}
+.pagecon_layer2_top {
+	POSITION: relative;
+	TEXT-ALIGN: left;
+	MARGIN: 0px;
+	WIDTH: 950px;
+	FLOAT: left;
+	TOP: -5px;
+}
+.pageblock2_wrap_top {
+	POSITION: absolute;
+	WIDTH: 808px;
+	background-color: #D6D6D6;
+	height: 1000;
+	float: left;
+	top: 2px;
+	left: 1px;
+}
+.pagecon_layer2_full {
+	MARGIN: 0px 0px 3px; WIDTH: 815px; DISPLAY: inline; FLOAT: left
+}
+.pagecon_layer2_left_top {
+	WIDTH: 400px; FLOAT: left
+}
+.pagecon_layer2_leftcon_top {
+	BACKGROUND-COLOR: white; MARGIN: 2px 0px; WIDTH: 401px; FLOAT: left; HEIGHT: 230px
+}
+.pagecon_layer2_mid_top {
+	MARGIN-TOP: 2px; WIDTH: 400px; FLOAT: left; MARGIN-LEFT: 6px
+}
+.pagecon_layer2_midcon_top {
+	BACKGROUND-COLOR: white; WIDTH: 401px; MARGIN-BOTTOM: 5px; FLOAT: left; HEIGHT: 230px; MARGIN-LEFT: 0px
+}
+.pagecon_layer2_leftcon_full {
+	BACKGROUND-COLOR: white; WIDTH: 808px; FLOAT: left; HEIGHT: 150px
+}
+.pagecon_layer2_leftcon_bottom {
+	BACKGROUND-COLOR: white; MARGIN: 3px 3px 3px 0px; WIDTH: 400px; FLOAT: left; HEIGHT: 230px
+}
+.pagecon_layer2_midcon_bottom {
+	BACKGROUND-COLOR: white; MARGIN: 3px 4px 3px 3px; WIDTH: 401px; FLOAT: left; HEIGHT: 230px
+}
+.page_09sidebarwrap {
+	POSITION: relative; BACKGROUND-COLOR: white; WIDTH: 138px; HEIGHT: 855px; RIGHT: -814px; TOP: 4px
+}
+.pagecon_layer2_full_longad {
+	POSITION: relative;
+	BACKGROUND-COLOR: white;
+	MARGIN: 4px 3px 3px 0px;
+	WIDTH: 951px;
+	HEIGHT: 100px
+}
+.content {
+	PADDING-BOTTOM: 3px; BACKGROUND-COLOR: white; MARGIN: 0px auto; PADDING-LEFT: 3px; WIDTH: 99%; PADDING-RIGHT: 3px; PADDING-TOP: 3px
+}
+.recom_list {
+	PADDING-BOTTOM: 0px; MARGIN: 0px auto; PADDING-LEFT: 20px; PADDING-RIGHT: 20px; PADDING-TOP: 10px
+}
+.title {
+	PADDING-BOTTOM: 3px; PADDING-LEFT: 3px; PADDING-RIGHT: 0px; FONT-SIZE: 16px; FONT-WEIGHT: bold; PADDING-TOP: 5px
+}
+H4 {
+	MARGIN: 0px; BACKGROUND: url(http://csdnimg.cn/www/images/csdnindex_pic11.gif) repeat-x 0px 0px; HEIGHT: 30px; BORDER-TOP: #cccccc 0px solid
+}
+.shadow {
+	-moz-box-shadow: 3px 3px 4px #808080; -webkit-box-shadow: 3px 4px 4px #808080; box-shadow: 3px 3px 4px #808080
+}
+.Mar {
+	BORDER-BOTTOM: #ccc 1px dashed; BORDER-LEFT: #ccc 1px dashed; MARGIN: 2px auto; WIDTH: 800px; BACKGROUND: #fff; HEIGHT: 145px; OVERFLOW: hidden; BORDER-TOP: #ccc 1px dashed; BORDER-RIGHT: #ccc 1px dashed
+}
+.Mar IMG {
+	BORDER-BOTTOM: #f2f2f2 3px solid; BORDER-LEFT: #f2f2f2 3px solid; WIDTH: 124px; HEIGHT: 145px; BORDER-TOP: #f2f2f2 3px solid; BORDER-RIGHT: #f2f2f2 3px solid
+}
+.inMar {
+	WIDTH: 3500px; FLOAT: left
+}
