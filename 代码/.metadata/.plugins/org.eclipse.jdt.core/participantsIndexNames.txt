@@ -1,0 +1,7 @@
+INDEX VERSION 1.131
+D:\温浩宇\书稿\Web网站设计与开发教程（HTML5、JSP版 第2版）\代码\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2124348326.index
+\JSPAdvanced\src
+D:\温浩宇\书稿\Web网站设计与开发教程（HTML5、JSP版 第2版）\代码\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\142819641.index
+\JSPBasics\src
+D:\温浩宇\书稿\Web网站设计与开发教程（HTML5、JSP版 第2版）\代码\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\481800452.index
+\JavaBean\src
