@@ -1,0 +1,54 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>JS DOM</title>
+    <script type="text/JavaScript">
+        function addMore() {
+            var td = document.getElementById("more");   //获取id为more的节点
+            var br = document.createElement("br");       //创建br元素
+            var input = document.createElement("input");  //创建input元素
+            var button = document.createElement("input");
+            input.type = "file";                       //指定input这个DOM对象的类型
+            input.name = "file";                      //指定名称
+            button.type = "button";                   //指定button这个DOM对象的类型
+            button.value = "Remove";                 //指定其value
+            td.appendChild(br);                      //将创建好的三个元素插入节点中
+            td.appendChild(input);
+            td.appendChild(button);
+            button.onclick = function () {               //为button按钮注册onclick事件
+                td.removeChild(br);                  //删除br元素
+                td.removeChild(input);               //删除input元素
+                td.removeChild(button);              //删除button元素
+
+            }
+        }
+    </script>
+
+</head>
+<body>
+    <form action="#" enctype="multipart/form-data" method="post">
+        <table border="1">
+            <caption>文件上传示例</caption>
+            <tr>
+                <td>
+                    文件名:
+                </td>
+                <td id="more">
+                    <input type="file" />
+                    <input type="button" value="add More" onclick="addMore();" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="submit" value="提交" />
+                </td>
+                <td>
+                    <input type="reset" value=" 重置 " />
+                </td>
+            </tr>
+        </table>
+    </form>
+
+</body>
+</html>

@@ -1,0 +1,26 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>JS基本语法</title>
+</head>
+<body>
+    <script type="text/JavaScript">
+        function convert(x) {
+            switch (typeof x) {
+                case 'number': return x.toString(16); //把整数转换成十六进制的整数
+                    break;
+                case 'string': return '"' + x + '"';      //返回引号包围的字符串
+                    break;
+                case 'boolean': return x.toString().toUpperCase();//转换为大写
+                    break;
+                default: return x.toString();   //直接调用x的toString()方法进行转换
+            }
+        }
+
+        document.write("十进制数110可以转换为："+convert(110) + "<br/>");       //转换数值
+        document.write("字符串ab可以转换为："+convert("ab") + "<br/>");      //转换字符串
+        document.write("布尔型真可以转换为："+convert(true) + "<br/>");       //转换布尔值
+    </script>
+</body>
+</html>

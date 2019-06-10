@@ -1,0 +1,27 @@
+﻿a.one:link {
+    color: #ff0000
+}
+
+a.one:visited {
+    color: #0000ff
+}
+
+a.one:hover {
+    color: #ffcc00
+}
+
+a.two:link {
+    color: #ff0000
+}
+
+a.two:visited {
+    color: #0000ff
+}
+
+a.two:hover {
+    font-size: 150%
+}
+
+input:focus {
+    background-color: yellow;
+}

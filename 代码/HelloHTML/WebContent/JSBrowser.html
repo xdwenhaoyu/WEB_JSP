@@ -1,0 +1,27 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>JS浏览器对象</title>
+</head>
+<body>
+    <button id="btn" onclick="link('张三')">Click Me!</button>
+    <script type="text/JavaScript">
+        var btn = document.getElementById("btn");
+        btn.textContent = "点击我";
+
+        function link(str) {
+            var myStr = prompt("请输入姓名");
+            if (myStr == str) {      //如果验证姓名输入正确
+                if (confirm(myStr + "你好！你想打开新的窗口?"))
+                    window.open("http://www.baidu.com");
+            }
+            else {
+                alert("对不起，用户名信息错误！");
+            }
+            return;
+        }
+    </script>
+
+</body>
+</html>

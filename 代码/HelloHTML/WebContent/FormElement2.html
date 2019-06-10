@@ -1,0 +1,31 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>表单元素</title>
+</head>
+<body>
+    <form method="post" action="travel.jsp">
+        <select name="Level">
+            <optgroup label="初中">
+                <option value="初一">初一</option>
+                <option value="初二">初二</option>
+                <option value="初三">初三</option>
+            </optgroup>
+            <optgroup label="高中">
+                <option value="高一">高一</option>
+                <option value="高二">高二</option>
+                <option value="高三">高三</option>
+            </optgroup>
+        </select>
+
+        <input list="cars" name="car"/>
+        <datalist id="cars">
+            <option value="BMW" label="BMW">
+            <option value="Ford" label="Ford">
+            <option value="Volvo" label="Volvo">
+        </datalist>
+    </form>
+
+</body>
+</html>

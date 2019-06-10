@@ -1,0 +1,23 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>JS类与对象</title>
+</head>
+<body>
+    <script type="text/JavaScript">
+        var o = new Date();              //o是一个Date对象
+        document.writeln("现在的时间是："+o.toLocaleString());
+        document.write("<br>");
+        
+        Complex = function (r, i)          //自定义Complex类型，表示复数
+        {
+            this.re = r;
+            this.im = i;
+        }
+        var c = new Complex(1, 2);          //c是一个复数对象
+        document.write("复数的实部和虚部分别是："+c.re + "," + c.im);
+    </script>
+
+</body>
+</html>

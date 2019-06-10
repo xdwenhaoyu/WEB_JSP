@@ -1,0 +1,26 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>CSS定位</title>
+    <style type="text/css">
+        h1.pos_left {position: relative; left: -20px}
+        h1.pos_right {position: relative; left: 20px}
+
+        h1.pos_abs {position: absolute; color: red; left: 100px; top: 50px}
+        h1.pos_fixed {position: fixed; color: red; top: 20px; right: 5px;}
+
+        img.x {position: absolute;left: 100px;top: 100px;z-index: -1}
+    </style>
+</head>
+<body>
+    <h1>这是位于正常位置的标题</h1>
+    <h1 class="pos_left">这个标题相对于其正常位置向左移动</h1>
+    <h1 class="pos_right">这个标题相对于其正常位置向右移动</h1>
+
+    <h1 class="pos_abs">这是带有绝对定位的标题</h1>
+    <h1 class="pos_fixed">这是带有固定定位的标题</h1>
+
+    <img class="x" src="pics/puppy.gif" />
+</body>
+</html>

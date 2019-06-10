@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>表单元素</title>
+</head>
+<body>
+    <form method="post" action="travel.jsp">
+        请输入姓名：<input type="text" name="textname" size="12" maxlength="6" />
+        <br />
+        请输入密码：<input type="password" name="passname" size="12" maxlength="6" />
+        <br />
+        上传的文件：<input type="file" name="filename" size="12" maxlength="6" />
+        <br />
+        请选择旅游城市，可多选
+        <input type="checkbox" name="复选框1">北京
+        <input type="checkbox" name="复选框2">上海
+        <input type="checkbox" name="复选框3">西安
+        <input type="checkbox" name="复选框4">杭州<br />
+        请选择付款方式
+        <input type="radio" name="支付方式" id="card" checked="checked">
+        <label for="card">信用卡</label>
+        <input type="radio" name="支付方式" id="cash">
+        <label for="cash">现金</label>
+        <br />
+        出发日期<input type="date" name="D"/>
+        出发时间<input type="time" name="T"/>
+        <br />
+        <input type="reset" name="复位按钮" value="复位">
+        <input type="submit" name="提交按钮" value="确定">
+        <input type="button" name="close" value="关闭当前窗口" onclick="window.close()">
+    </form>
+
+</body>
+</html>

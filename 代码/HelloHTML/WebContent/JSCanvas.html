@@ -1,0 +1,76 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>JS　Canvas绘图</title>
+    <script type="text/javascript">
+        function graph(report, maxWidth, maxHeight) {
+            var data = report.values;
+            var canvas = document.getElementById("graph");
+            var axisBuffer = 20;
+            canvas.height = maxHeight + 100;
+            canvas.width = maxWidth;
+            var ctx = canvas.getContext("2d");
+
+            var width = 50;
+            var buffer = 20;
+            var i = 0;
+            var x = buffer + axisBuffer;
+            ctx.font = "bold 12px 宋体";
+            ctx.textAlign = "start";
+            for (i = 0; i < data.length; i++) {
+                ctx.fillStyle = "rgba(0, 0, 200, 0.9)";
+                ctx.fillRect(x, maxHeight - (data[i][report.y] / 2),
+                         width, (data[i][report.y] / 2));
+                ctx.fillStyle = "rgba(0, 0, 0, 0.9)";
+                ctx.fillText(data[i][report.x], x + (width / 4), maxHeight + 15);
+                x += width + buffer;
+            }
+
+            // draw the horizontal axis
+            ctx.moveTo(axisBuffer, maxHeight);
+            ctx.lineTo(axisBuffer + maxWidth, maxHeight);
+            ctx.strokeStyle = "black";
+            ctx.stroke();
+
+            // draw the vertical axis
+            ctx.moveTo(axisBuffer, 0);
+            ctx.lineTo(axisBuffer, maxHeight);
+            ctx.stroke();
+
+            // draw gridlines
+            var lineSpacing = 50;
+            var numLines = maxHeight / lineSpacing;
+            var y = lineSpacing;
+            ctx.font = "10px 宋体";
+            ctx.textBaseline = "middle";
+            for (i = 0; i < numLines; i++) {
+                ctx.strokeStyle = "rgba(0,0,0,0.25)";
+                ctx.moveTo(axisBuffer, y);
+                ctx.lineTo(axisBuffer + maxWidth, y);
+                ctx.stroke();
+                ctx.fillStyle = "rgba(0,0,0, 0.75)";
+                ctx.fillText("" + (2 * (maxHeight - y)), 0, y);
+                y += lineSpacing;
+            }
+        }
+
+        function init() {
+            var data = [{ year: "2017年", sales: 50 },
+                { year: "2018年", sales: 150 },
+                { year: "2019年", sales: 300 },
+                { year: "2020年", sales: 400 }];
+            var report = {
+                x: "year",
+                y: "sales",
+                values: data
+            };
+            graph(report, 350, 300);
+        }
+    </script>
+
+</head>
+<body onload="init()">
+    <canvas id="graph"></canvas>
+</body>
+</html>

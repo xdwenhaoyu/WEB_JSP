@@ -1,0 +1,55 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>表格元素</title>
+</head>
+<body>
+    <table border="1">
+        <caption>跨两列的单元格</caption>
+        <tr>
+            <th>姓名</th>
+            <th colspan="2">电话</th>
+        </tr>
+        <tr>
+            <td>张小明</td>
+            <td>13999912345</td>
+            <td>325330425</td>
+        </tr>
+    </table>
+    <br />
+    <table border="1">
+        <caption>跨两行的单元格</caption>
+        <tr>
+            <th>姓名</th>
+            <td>张小明</td>
+        </tr>
+        <tr>
+            <th rowspan="2">电话</th>
+            <td>13999912345</td>
+        </tr>
+        <tr>
+            <td>325330425</td>
+        </tr>
+    </table>
+    <br />
+    <table border="1">
+        <thead>
+            <tr>
+                <td>THEAD中的文本</td>
+            </tr>
+        </thead>
+        <tfoot>
+            <tr>
+                <td>TFOOT 中的文本</td>
+            </tr>
+        </tfoot>
+        <tbody>
+            <tr>
+                <td>TBODY 中的文本</td>
+            </tr>
+        </tbody>
+    </table>
+
+</body>
+</html>

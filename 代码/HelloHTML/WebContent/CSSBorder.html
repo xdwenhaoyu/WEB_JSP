@@ -1,0 +1,51 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>CSS样式设置</title>
+    <style type="text/css">
+        p {border: medium double rgb(0,0,255)}
+        p.redborder {border: medium double rgb(250,0,0)}
+
+        p.one {border-style: solid; border-color: #0000ff}
+        p.two {border-style: solid; border-color: #ff0000 #0000ff}
+        p.three {border-style: solid; border-color: #ff0000 #00ff00 #0000ff}
+        .four {border-style: solid;
+            border-color: #ff0000 #00ff00 #0000ff rgb(250,0,255)   }
+
+        td.test1 {padding: 1.5cm}
+        td.test2 {padding: 0.5cm 2.5cm}
+    </style>
+</head>
+<body>
+    <p>一般段落文字</p>
+    <p class="redborder">特殊段落文字</p>
+
+    <p class="one">One-colored border!</p>
+    <p class="two">Two-colored border!</p>
+    <p class="three">Three-colored border!</p>
+    <p class="four">Four-colored border!</p>
+
+    <table border="1" class="four">
+        <tr>
+            <td class="test1">
+                这个表格单元的每个边拥有相等的内边距。
+            </td>
+            <td class="test1">
+                这个表格单元的每个边拥有相等的内边距。
+            </td>
+        </tr>
+    </table>
+    <br />
+    <table border="1">
+        <tr>
+            <td class="test2">
+                这个表格单元的上和下内边距是 0.5cm，左和右内边距是 2.5cm。
+            </td>
+            <td class="test2">
+                这个表格单元的上和下内边距是 0.5cm，左和右内边距是 2.5cm。
+            </td>
+        </tr>
+    </table>
+</body>
+</html>

@@ -1,0 +1,8 @@
+1，在SQL server数据库中创建一个数据库，名为：db_news。确保SQL server的网络配置
+2，在SQL server中执行db_news.sql文件中的sql脚本
+3，配置src文件夹中“db.properties”文件，注意根据情况调试其中的数据库连接字符串等配置。
+
+driver=com.microsoft.sqlserver.jdbc.SQLServerDriver
+url=jdbc:sqlserver://localhost:1433;databaseName=db_news
+user=sa
+password=123

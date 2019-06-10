@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>用户信息</title>
+</head>
+<body>
+	<h2>用户个人信息填写</h2>
+	<hr>
+	<form name="user-info" action="request_param.jsp" method="post">
+		<!--从上一行代码可知单击表单user-info的“提交”按钮，以post方式向request_param.jsp提交信息-->
+		姓名:<input type="text" size="10" name="name">
+		<p>
+			性别：男<input type="radio" value="male" name="sex" checked="checked">&nbsp;女<input
+				type="radio" value="female" name="sex">
+		</p>
+		<p>
+			年龄：<input type="text" size="5" name="age">
+		</p>
+		个人爱好：<select name="hobbies"><option selected value="音乐">音乐</option>
+			<option value="绘画">绘画</option>
+			<option value="运动">体育</option>
+			<option value="读书">读书</option></select>
+		<p></p>
+		<input type="submit" value="提交" name="submit">&nbsp;<input
+			type="reset" value="重置" name="reset">
+	</form>
+</body>
+</html>
