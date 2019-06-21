@@ -7,7 +7,8 @@
 <title>增加Cookie</title>
 </head>
 <body>
-	姓名：<%=request.getParameter("username")%><br> 年龄：<%=request.getParameter("age")%>
+	姓名：<%=request.getParameter("username")%><br>
+	年龄：<%=request.getParameter("age")%>
 	<%
 		String username = request.getParameter("username");
 		String age = request.getParameter("age");

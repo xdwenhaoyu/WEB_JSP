@@ -10,6 +10,6 @@
 <body>
 	重要的事情说三遍：
 	<br>
-	<myTag:tags.MyTag info="学习JSP是非常有用的" ></myTag:tags.MyTag>
+	<myTag:tags.MyTag info="学习JSP需要动手实践" ></myTag:tags.MyTag>
 </body>
 </html>

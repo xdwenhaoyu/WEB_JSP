@@ -10,7 +10,7 @@
 		<name>tags.MyTag</name>
 		<tag-class>tags.MyTag</tag-class>
 		<body-content>JSP</body-content>
-		<description>tags.MyTag标签</description>
+		<description>tags.MyTag重要的事情标签</description>
 		<attribute>
 			<name>info</name>
 			<required>true</required>

@@ -14,7 +14,7 @@
 		//声明一个包含26个英文字母的字符串数组
 		String charString = new String("abcdedfghijklmnopqrstuvwxyz");
 		//随机生成了一个1-26个之间的整数数字
-		int charNumber = (int) (Math.random() * 100 + 1) % 26 - 1;
+		int charNumber = (int) (Math.random() * 100 + 1) % 26;
 		//以charNumber为下标取对应字母的字符串中的字符
 		Character TempCharacter = new Character(charString.charAt(charNumber));
 		//将TempCharacter作为属性存储到session中

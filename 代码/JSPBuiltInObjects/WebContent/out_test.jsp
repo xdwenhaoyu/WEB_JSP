@@ -14,8 +14,8 @@
 		for (int i = 0; i < 10; i++)
 			out.println(i + "{剩余" + out.getRemaining() + "字节}<br>");
 	%>
-	缓存大小：<%=out.getBufferSize() + "字节<br>"%>
-	剩余缓存大小：<%=out.getRemaining() + "字节<br>"%>
-	自动刷新:<%=out.isAutoFlush()%>
+	缓冲区大小：<%=out.getBufferSize() + "字节<br>"%>
+	剩余缓冲区大小：<%=out.getRemaining() + "字节<br>"%>
+	自动清空缓冲区:<%=out.isAutoFlush()%>
 </body>
 </html>

@@ -1,2 +1,3 @@
 eclipse.preferences.version=1
 org.eclipse.jsch.core.hasChangedDefaultWin32SshHome=true
+org.eclipse.jsch.core.hasMigratedSsh2Preferences=true
