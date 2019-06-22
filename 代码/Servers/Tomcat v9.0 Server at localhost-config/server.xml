@@ -103,7 +103,7 @@
 				<Valve className="org.apache.catalina.valves.AccessLogValve" directory="logs" pattern="%h %l %u %t &quot;%r&quot; %s %b" prefix="localhost_access_log" suffix=".txt"/>
 
 				
-			<Context docBase="JSPBuiltInObjects" path="/JSPBuiltInObject" reloadable="true" source="org.eclipse.jst.jee.server:JSPBuiltInObjects"/><Context docBase="JSPBasics" path="/JSPBasics" reloadable="true" source="org.eclipse.jst.jee.server:JSPBasics"/></Host>
+			<Context docBase="JavaBean" path="/JavaBean" reloadable="true" source="org.eclipse.jst.jee.server:JavaBean"/><Context docBase="DBBasics" path="/DBBasics" reloadable="true" source="org.eclipse.jst.jee.server:DBBasics"/></Host>
 		</Engine>
 	</Service>
 </Server>

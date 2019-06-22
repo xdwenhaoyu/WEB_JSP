@@ -3,15 +3,15 @@ import java.sql.*;
 import example.bean.*;
 
 public class AddressDAO {
-	DBUtil dbu = new DBUtil();
+	//DBUtil dbu = new DBUtil();
 
-	public Address loadAddress(int id) {
+	public static Address loadAddress(int id) {
 		Address address = null;
 		Connection con = null;
 		PreparedStatement ps = null;
 		ResultSet rs = null;
 		try {
-			con = dbu.getConnection();
+			con = DBUtil.getConnection();
 			String sql = "SELECT [AddressID],[AddressLine1],[City],[StateProvinceID],[PostalCode] FROM [Person].[Address] where [AddressID] =?";
 			ps = con.prepareStatement(sql);
 			ps.setInt(1, id);
@@ -29,7 +29,7 @@ public class AddressDAO {
 			e.printStackTrace();
 		} finally {
 			try {
-				dbu.closeConnection(con, ps, null);
+				DBUtil.closeConnection(con, ps, null);
 			} catch (SQLException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
@@ -38,13 +38,13 @@ public class AddressDAO {
 		return address;
 	}
 
-	public List<Address> findAll() {
+	public static List<Address> findAll() {
 		List<Address> addressList = new ArrayList<Address>();
 		Connection con = null;
 		PreparedStatement ps = null;
 		ResultSet rs = null;
 		try {
-			con = dbu.getConnection();
+			con = DBUtil.getConnection();
 			String sql = "SELECT top 10 [AddressID],[AddressLine1],[City],[StateProvinceID],[PostalCode] FROM [Person].[Address]";
 			//String sql = "SELECT top 10 * FROM Address";
 			ps = con.prepareStatement(sql);
@@ -64,7 +64,7 @@ public class AddressDAO {
 			e.printStackTrace();
 		} finally {
 			try {
-				dbu.closeConnection(con, ps, null);
+				DBUtil.closeConnection(con, ps, null);
 			} catch (SQLException e) {
 				e.printStackTrace();
 			}
@@ -73,13 +73,13 @@ public class AddressDAO {
 		return addressList;
 	}
 
-	public void addAddress(Address address) {
+	public static void addAddress(Address address) {
 		Connection con = null;
 		PreparedStatement ps = null;
 		String sql = "INSERT INTO [Person].[Address] ([AddressLine1],[City],[StateProvinceID],[PostalCode]) values(?,?,?,?)";
 		try {
 
-			con = dbu.getConnection();
+			con = DBUtil.getConnection();
 			ps = con.prepareStatement(sql);
 
 			ps.setString(1, address.getAddressLine1());
@@ -96,19 +96,19 @@ public class AddressDAO {
 			e.printStackTrace();
 		} finally {
 			try {
-				dbu.closeConnection(con, ps, null);
+				DBUtil.closeConnection(con, ps, null);
 			} catch (SQLException e) {
 				e.printStackTrace();
 			}
 		}
 	}
 
-	public void deleteAddress(int id) {
+	public static void deleteAddress(int id) {
 		Connection con = null;
 		PreparedStatement ps = null;
 		String sql = "DELETE FROM [Person].[Address] WHERE [AddressID]=?";
 		try {
-			con = dbu.getConnection();
+			con = DBUtil.getConnection();
 			ps = con.prepareStatement(sql);
 			ps.setInt(1, id);
 			int flag = ps.executeUpdate();
@@ -119,19 +119,19 @@ public class AddressDAO {
 			e.printStackTrace();
 		} finally {
 			try {
-				dbu.closeConnection(con, ps, null);
+				DBUtil.closeConnection(con, ps, null);
 			} catch (SQLException e) {
 				e.printStackTrace();
 			}
 		}
 	}
 
-	public void updateAddress(Address address) {
+	public static void updateAddress(Address address) {
 		Connection con=null;
 		PreparedStatement ps=null;
 		String sql="UPDATE [Person].[Address] SET [AddressLine1]=?,[City]=?,[StateProvinceID]=?,[PostalCode]=? where [AddressID]=?";
 		try {
-			con=dbu.getConnection();
+			con=DBUtil.getConnection();
 			ps=con.prepareStatement(sql);
 			
 			ps.setString(1, address.getAddressLine1());
@@ -148,7 +148,7 @@ public class AddressDAO {
 			e.printStackTrace();
 		}finally {
 			try {
-				dbu.closeConnection(con, ps, null);
+				DBUtil.closeConnection(con, ps, null);
 			}catch(SQLException e) {
 				e.printStackTrace();
 			}

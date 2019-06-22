@@ -12,7 +12,7 @@ public class DBUtil {
 
   
     //对外提供一个方法来获取数据库连接
-    public Connection getConnection() {
+    public static Connection getConnection() {
     	
     	try {
     		Class.forName( DRIVER ) ;
@@ -34,7 +34,7 @@ public class DBUtil {
     }
     
     //关闭连接
-    public void closeConnection(Connection con,PreparedStatement ps,ResultSet rs) throws SQLException{
+    public static void closeConnection(Connection con,PreparedStatement ps,ResultSet rs) throws SQLException{
     	if(rs!=null){
     		rs.close();
     	}

@@ -10,10 +10,10 @@ import example.bean.*;
 /**
  * Servlet implementation class AddressServlet
  */
-@WebServlet(name="/AddressServlet", urlPatterns={"/list","/add","/delete","/load","/update"})
+@WebServlet(name="/AddressServlet", urlPatterns={"/list.do","/add.do","/delete.do","/load.do","/update.do"})
 public class AddressServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	private AddressDAO addressDao = new AddressDAO();   
+	//private AddressDAO addressDao = new AddressDAO();   
     /**
      * @see HttpServlet#HttpServlet()
      */
@@ -32,10 +32,10 @@ public class AddressServlet extends HttpServlet {
 		String url = request.getRequestURI();
 		//System.out.println(url);
 
-		String action = url.substring(url.lastIndexOf('/') + 1, url.length());
-		System.out.println(action);
+		String action = request.getRequestURI().substring(url.lastIndexOf('/') + 1, url.lastIndexOf('.'));
+
 		if ("list".equals(action)) {
-			List<Address> listAddress = addressDao.findAll();
+			List<Address> listAddress = AddressDAO.findAll();
 			request.setAttribute("listAddress", listAddress);
 			request.getRequestDispatcher("listAddress.jsp").forward(request, response);
 		} else if ("add".equals(action)) {
@@ -44,14 +44,14 @@ public class AddressServlet extends HttpServlet {
 			address.setCity(request.getParameter("city"));
 			address.setStateProvinceID(Integer.parseInt(request.getParameter("stateProvinceID")));
 			address.setPostalCode(request.getParameter("postalCode"));			
-			addressDao.addAddress(address);
+			AddressDAO.addAddress(address);
 			response.sendRedirect("list");
 		} else if ("delete".equals(action)) {
 			int addressID = Integer.parseInt(request.getParameter("addressID"));
-			addressDao.deleteAddress(addressID);
+			AddressDAO.deleteAddress(addressID);
 			response.sendRedirect("list");
 		} else if ("load".equals(action)) {
-			Address address = addressDao.loadAddress(Integer.parseInt(request.getParameter("addressID")));
+			Address address = AddressDAO.loadAddress(Integer.parseInt(request.getParameter("addressID")));
 			request.setAttribute("address", address);
 			request.getRequestDispatcher("addressInfo.jsp").forward(request, response);
 		} else if ("update".equals(action)) {
@@ -60,7 +60,7 @@ public class AddressServlet extends HttpServlet {
 			address.setCity(request.getParameter("city"));
 			address.setStateProvinceID(Integer.parseInt(request.getParameter("stateProvinceID")));
 			address.setPostalCode(request.getParameter("postalCode"));
-			addressDao.updateAddress(address);
+			AddressDAO.updateAddress(address);
 			response.sendRedirect("list");
 		}
 	}
