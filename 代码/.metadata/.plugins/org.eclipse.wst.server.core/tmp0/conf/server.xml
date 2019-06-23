@@ -103,7 +103,7 @@
 				<Valve className="org.apache.catalina.valves.AccessLogValve" directory="logs" pattern="%h %l %u %t &quot;%r&quot; %s %b" prefix="localhost_access_log" suffix=".txt"/>
 
 				
-			<Context docBase="D:\温浩宇\书稿\Web网站设计与开发教程（HTML5、JSP版 第2版）\课程资源\代码\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\ROOT" path="" reloadable="false"/><Context docBase="D:\温浩宇\书稿\Web网站设计与开发教程（HTML5、JSP版 第2版）\课程资源\代码\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\JavaBean" path="/JavaBean" reloadable="true" source="org.eclipse.jst.jee.server:JavaBean"/><Context docBase="D:\温浩宇\书稿\Web网站设计与开发教程（HTML5、JSP版 第2版）\课程资源\代码\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\DBBasics" path="/DBBasics" reloadable="true" source="org.eclipse.jst.jee.server:DBBasics"/></Host>
+			<Context docBase="D:\温浩宇\书稿\Web网站设计与开发教程（HTML5、JSP版 第2版）\课程资源\代码\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\ROOT" path="" reloadable="false"/><Context docBase="D:\温浩宇\书稿\Web网站设计与开发教程（HTML5、JSP版 第2版）\课程资源\代码\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\JavaBean" path="/JavaBean" reloadable="true" source="org.eclipse.jst.jee.server:JavaBean"/><Context docBase="D:\温浩宇\书稿\Web网站设计与开发教程（HTML5、JSP版 第2版）\课程资源\代码\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\DBBasics" path="/DBBasics" reloadable="true" source="org.eclipse.jst.jee.server:DBBasics"/><Context docBase="D:\温浩宇\书稿\Web网站设计与开发教程（HTML5、JSP版 第2版）\课程资源\代码\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\CSSBasics" path="/CSSBasics" reloadable="true" source="org.eclipse.jst.jee.server:CSSBasics"/></Host>
 		</Engine>
 	</Service>
 </Server>

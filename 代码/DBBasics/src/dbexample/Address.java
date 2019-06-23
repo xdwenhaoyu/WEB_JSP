@@ -1,4 +1,5 @@
-package example.bean;
+package dbexample;
+
 
 public class Address {
 	private int addressID;

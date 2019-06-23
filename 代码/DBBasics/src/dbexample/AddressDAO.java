@@ -1,9 +1,8 @@
+package dbexample;
 import java.util.*;
 import java.sql.*;
-import example.bean.*;
 
 public class AddressDAO {
-	//DBUtil dbu = new DBUtil();
 
 	public static Address loadAddress(int id) {
 		Address address = null;
@@ -45,7 +44,7 @@ public class AddressDAO {
 		ResultSet rs = null;
 		try {
 			con = DBUtil.getConnection();
-			String sql = "SELECT top 10 [AddressID],[AddressLine1],[City],[StateProvinceID],[PostalCode] FROM [Person].[Address]";
+			String sql = "SELECT top 10 [AddressID],[AddressLine1],[City],[StateProvinceID],[PostalCode] FROM [Person].[Address] order by [AddressID] desc";
 			//String sql = "SELECT top 10 * FROM Address";
 			ps = con.prepareStatement(sql);
 			rs = ps.executeQuery();

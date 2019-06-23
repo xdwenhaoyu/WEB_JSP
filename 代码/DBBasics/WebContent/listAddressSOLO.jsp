@@ -13,6 +13,7 @@
 		final String URL = "jdbc:sqlserver://localhost:1433;DatabaseName=AdventureWorks2008R2";
 		final String USER = "sa";
 		final String PASSWORD = "123456";
+		
 		Connection con = null;
 		PreparedStatement ps = null;
 		ResultSet rs = null;
