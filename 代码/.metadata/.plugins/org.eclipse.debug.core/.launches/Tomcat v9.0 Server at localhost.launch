@@ -8,6 +8,6 @@
 <booleanAttribute key="org.eclipse.jdt.launching.DEFAULT_CLASSPATH" value="false"/>
 <stringAttribute key="org.eclipse.jdt.launching.JRE_CONTAINER" value="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/jre1.8.0_211"/>
 <stringAttribute key="org.eclipse.jdt.launching.PROGRAM_ARGUMENTS" value="start"/>
-<stringAttribute key="org.eclipse.jdt.launching.VM_ARGUMENTS" value="-Dcatalina.base=&quot;D:\温浩宇\书稿\Web网站设计与开发教程（HTML5、JSP版 第2版）\课程资源\代码\.metadata\.plugins\org.eclipse.wst.server.core\tmp0&quot; -Dcatalina.home=&quot;C:\Program Files\Apache Software Foundation\Tomcat 9.0&quot; -Dwtp.deploy=&quot;D:\温浩宇\书稿\Web网站设计与开发教程（HTML5、JSP版 第2版）\课程资源\代码\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps&quot; -Djava.endorsed.dirs=&quot;C:\Program Files\Apache Software Foundation\Tomcat 9.0\endorsed&quot;"/>
+<stringAttribute key="org.eclipse.jdt.launching.VM_ARGUMENTS" value="-Dcatalina.base=&quot;D:\温浩宇\书稿\Web网站设计与开发教程（HTML5、JSP版 第2版）\课程资源\代码\.metadata\.plugins\org.eclipse.wst.server.core\tmp1&quot; -Dcatalina.home=&quot;C:\Program Files\Apache Software Foundation\Tomcat 9.0&quot; -Dwtp.deploy=&quot;D:\温浩宇\书稿\Web网站设计与开发教程（HTML5、JSP版 第2版）\课程资源\代码\.metadata\.plugins\org.eclipse.wst.server.core\tmp1\wtpwebapps&quot; -Djava.endorsed.dirs=&quot;C:\Program Files\Apache Software Foundation\Tomcat 9.0\endorsed&quot;"/>
 <stringAttribute key="server-id" value="Tomcat v9.0 Server at localhost"/>
 </launchConfiguration>

@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
+	<list key="org.eclipse.ui.internal.wizards.datatransfer.SmartImportRootWizardPage.knownSources">
+		<item value="D:\温浩宇\书稿\Web网站设计与开发教程（HTML5、JSP版 第2版）\课程资源\代码\MyBatisBasics"/>
+		<item value="D:\温浩宇\书稿\Web网站设计与开发教程（HTML5、JSP版 第2版）\课程资源\代码"/>
+		<item value="D:\温浩宇\书稿\Web网站设计与开发教程（HTML5、JSP版 第2版）\课程资源\代码\DBBasics2"/>
+	</list>
 	<section name="CleanDialogSettings">
 		<item key="DIALOG_X_ORIGIN" value="390"/>
 		<item key="DIALOG_Y_ORIGIN" value="82"/>
@@ -8,5 +13,18 @@
 		<item key="TOGGLE_SELECTED" value="false"/>
 		<item key="BUILD_NOW" value="true"/>
 		<item key="BUILD_ALL" value="true"/>
+	</section>
+	<section name="ExternalProjectImportWizard">
+		<item key="WizardProjectsImportPage.STORE_NESTED_PROJECTS" value="false"/>
+		<item key="WizardProjectsImportPage.STORE_COPY_PROJECT_ID" value="false"/>
+		<item key="WizardProjectsImportPage.STORE_ARCHIVE_SELECTED" value="false"/>
+		<list key="WizardProjectsImportPage.STORE_DIRECTORIES">
+			<item value="D:\温浩宇\书稿\Web网站设计与开发教程（HTML5、JSP版 第2版）\课程资源\代码\MyBatisBasics"/>
+			<item value="D:\温浩宇\书稿\Web网站设计与开发教程（HTML5、JSP版 第2版）\课程资源\代码"/>
+			<item value="D:\温浩宇\书稿\Web网站设计与开发教程（HTML5、JSP版 第2版）\课程资源\代码\DBBasics2"/>
+		</list>
+		<list key="WizardProjectsImportPage.STORE_ARCHIVES">
+			<item value=""/>
+		</list>
 	</section>
 </section>
