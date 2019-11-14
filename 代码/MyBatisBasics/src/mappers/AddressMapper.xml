@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!--mapper:根标签 -->
+<mapper namespace="MyMapper">
+	<!--查询数据 -->
+	<select id="loadAddress" resultType="dbexample.Address">
+		select [AddressID],[AddressLine1],[City],[StateProvinceID],[PostalCode]
+			from [Person].[Address]
+			where [AddressID] =#{AddressID}
+	</select>
+
+	<select id="findAll" resultType="dbexample.Address">
+		select top 10 [AddressID],[AddressLine1],[City],[StateProvinceID],[PostalCode]
+			from [Person].[Address]
+			order by [AddressID] DESC;
+	</select>
+
+	<!--插入数据 -->
+	<!--由于插入的参数为POJO对象，要求addressLine1这样的属性名称与参数相同（注意首字母的小写） -->
+	<insert id="addAddress" parameterType="dbexample.Address">
+		insert into [Person].[Address]
+			([AddressLine1],[City],[StateProvinceID],[PostalCode])
+			values(#{addressLine1},#{city},#{stateProvinceID},#{postalCode});
+	</insert>
+
+	<!--删除数据 -->
+	<delete id="deleteAddress">
+		delete from [Person].[Address]
+			where [AddressID]=#{AddressID}
+	</delete>
+
+	<!--更新数据 -->
+		<!--由于更新的参数为POJO对象，要求addressLine1这样的属性名称与参数相同（注意首字母的小写） -->
+	<update id="updateAddress" parameterType="dbexample.Address">
+		UPDATE [Person].[Address]
+		SET
+			[AddressLine1]=#{addressLine1},
+			[City]=#{city},
+			[StateProvinceID]=#{stateProvinceID},
+			[PostalCode]=#{postalCode}
+		where [AddressID]=#{addressID};
+	</update>
+
+</mapper>

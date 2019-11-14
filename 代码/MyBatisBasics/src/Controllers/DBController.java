@@ -1,5 +1,6 @@
 package Controllers;
 
+import java.io.IOException;
 import java.util.List;
 
 import org.springframework.stereotype.Controller;
@@ -15,47 +16,52 @@ import dbexample.AddressDAO;
 public class DBController {
 
 	@RequestMapping(value = "/list.do")
-	public String list(ModelMap model) {
-		List<Address> listAddress = AddressDAO.findAll();
+	public String list(ModelMap model) throws IOException{
+		AddressDAO addressDAO = new AddressDAO();
+		List<Address> listAddress = addressDAO.findAll();
 		model.addAttribute("listAddress", listAddress);
 		return "/listAddressTag.jsp";
 	}
 	
 	@RequestMapping(value = "/add.do")
-	public String add(String addressLine1, String city, String stateProvinceID, String postalCode, ModelMap model) {
+	public String add(String addressLine1, String city, String stateProvinceID, String postalCode, ModelMap model) throws IOException {
 		Address address = new Address();	
 
 		address.setAddressLine1(addressLine1);
 		address.setCity(city);
 		address.setStateProvinceID(Integer.parseInt(stateProvinceID));
-		address.setPostalCode(postalCode);			
-		AddressDAO.addAddress(address);
+		address.setPostalCode(postalCode);	
+		AddressDAO addressDAO = new AddressDAO();
+		addressDAO.addAddress(address);
 		return "/list.do";
 	}
 		
 	@RequestMapping(value = "/delete.do")
-	public String delete(Integer addressID, ModelMap model) {
+	public String delete(Integer addressID, ModelMap model) throws IOException {
 		System.out.println("½øÈëÉ¾³ý");
-		AddressDAO.deleteAddress(addressID.intValue());
+		AddressDAO addressDAO = new AddressDAO();
+		addressDAO.deleteAddress(addressID.intValue());
 		return "/list.do";
 	}
 		
 	@RequestMapping(value = "/load.do")
-	public String load(String addressID, ModelMap model) {
-		Address address = AddressDAO.loadAddress(Integer.parseInt(addressID));
+	public String load(String addressID, ModelMap model) throws NumberFormatException, IOException {
+		AddressDAO addressDAO = new AddressDAO();
+		Address address = addressDAO.loadAddress(Integer.parseInt(addressID));
 		model.addAttribute("address", address);
 		return "/UpdateAddress.jsp";
 	}
 	
 	@RequestMapping(value = "/update.do")
-	public String update(String addressID, String addressLine1, String city, String stateProvinceID, String postalCode, ModelMap model) {
+	public String update(String addressID, String addressLine1, String city, String stateProvinceID, String postalCode, ModelMap model) throws IOException {
 		Address address = new Address();
 		address.setAddressID(Integer.parseInt(addressID));
 		address.setAddressLine1(addressLine1);
 		address.setCity(city);
 		address.setStateProvinceID(Integer.parseInt(stateProvinceID));
 		address.setPostalCode(postalCode);
-		AddressDAO.updateAddress(address);
+		AddressDAO addressDAO = new AddressDAO();
+		addressDAO.updateAddress(address);
 		return "/list.do";
 	}
 }

@@ -1,156 +1,75 @@
 package dbexample;
-import java.util.*;
-import java.sql.*;
+
+import java.io.IOException;
+import java.io.InputStream;
+import java.util.ArrayList;
+import java.util.List;
+
+import org.apache.ibatis.io.Resources;
+import org.apache.ibatis.session.SqlSession;
+import org.apache.ibatis.session.SqlSessionFactory;
+import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
 public class AddressDAO {
+	private SqlSession sqlSession;
+	
+    public void setUp() throws IOException {
+        // 指定配置文件
+        String resource = "mybatis-config.xml";
+        // 读取配置文件
+        InputStream inputStream = Resources.getResourceAsStream(resource);
+        // 构建sqlSessionFactory
+        SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);
+        // 获取sqlSession
+        sqlSession = sqlSessionFactory.openSession(true);
+    }
 
-	public static Address loadAddress(int id) {
+	public Address loadAddress(int id) throws IOException{
 		Address address = null;
-		Connection con = null;
-		PreparedStatement ps = null;
-		ResultSet rs = null;
+		setUp();
 		try {
-			con = DBUtil.getConnection();
-			String sql = "SELECT [AddressID],[AddressLine1],[City],[StateProvinceID],[PostalCode] FROM [Person].[Address] where [AddressID] =?";
-			ps = con.prepareStatement(sql);
-			ps.setInt(1, id);
-			rs = ps.executeQuery();
-			while (rs.next()) {
-				address = new Address();
-				address.setAddressID(rs.getInt("AddressID"));
-				address.setAddressLine1(rs.getString("AddressLine1"));
-				address.setCity(rs.getString("City"));
-				address.setStateProvinceID(rs.getInt("StateProvinceID"));
-				address.setPostalCode(rs.getString("PostalCode"));
-			}
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			address = sqlSession.selectOne("MyMapper.loadAddress", id);
 		} finally {
-			try {
-				DBUtil.closeConnection(con, ps, null);
-			} catch (SQLException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
+			sqlSession.close();
 		}
 		return address;
 	}
 
-	public static List<Address> findAll() {
+	public List<Address> findAll() throws IOException {
 		List<Address> addressList = new ArrayList<Address>();
-		Connection con = null;
-		PreparedStatement ps = null;
-		ResultSet rs = null;
+		setUp();
 		try {
-			con = DBUtil.getConnection();
-			String sql = "SELECT top 10 [AddressID],[AddressLine1],[City],[StateProvinceID],[PostalCode] FROM [Person].[Address] order by [AddressID] desc";
-			//String sql = "SELECT top 10 * FROM Address";
-			ps = con.prepareStatement(sql);
-			rs = ps.executeQuery();
-			while (rs.next()) {
-				Address address = new Address();
-
-				address.setAddressID(rs.getInt("AddressID"));
-				address.setAddressLine1(rs.getString("AddressLine1"));
-				address.setCity(rs.getString("City"));
-				address.setStateProvinceID(rs.getInt("StateProvinceID"));
-				address.setPostalCode(rs.getString("PostalCode"));
-
-				addressList.add(address);
-			}
-		} catch (SQLException e) {
-			e.printStackTrace();
+			addressList = sqlSession.selectList("MyMapper.findAll");
 		} finally {
-			try {
-				DBUtil.closeConnection(con, ps, null);
-			} catch (SQLException e) {
-				e.printStackTrace();
-			}
+			sqlSession.close();
 		}
-
 		return addressList;
 	}
 
-	public static void addAddress(Address address) {
-		Connection con = null;
-		PreparedStatement ps = null;
-		String sql = "INSERT INTO [Person].[Address] ([AddressLine1],[City],[StateProvinceID],[PostalCode]) values(?,?,?,?)";
+	public void addAddress(Address address) throws IOException {
+		setUp();
 		try {
-
-			con = DBUtil.getConnection();
-			ps = con.prepareStatement(sql);
-
-			ps.setString(1, address.getAddressLine1());
-			ps.setString(2, address.getCity());
-			ps.setInt(3, address.getStateProvinceID());
-			ps.setString(4, address.getPostalCode());
-
-			int flag = ps.executeUpdate();
-			if (flag > 0) {
-				System.out.println("添加成功！");
-			}
-
-		} catch (SQLException e) {
-			e.printStackTrace();
+			sqlSession.insert("MyMapper.addAddress", address);
 		} finally {
-			try {
-				DBUtil.closeConnection(con, ps, null);
-			} catch (SQLException e) {
-				e.printStackTrace();
-			}
+			sqlSession.close();
 		}
 	}
 
-	public static void deleteAddress(int id) {
-		Connection con = null;
-		PreparedStatement ps = null;
-		String sql = "DELETE FROM [Person].[Address] WHERE [AddressID]=?";
+	public void deleteAddress(int id) throws IOException {
+		setUp();
 		try {
-			con = DBUtil.getConnection();
-			ps = con.prepareStatement(sql);
-			ps.setInt(1, id);
-			int flag = ps.executeUpdate();
-			if (flag > 0) {
-				System.out.println("删除成功！");
-			}
-		} catch (SQLException e) {
-			e.printStackTrace();
+			sqlSession.delete("MyMapper.deleteAddress", id);
 		} finally {
-			try {
-				DBUtil.closeConnection(con, ps, null);
-			} catch (SQLException e) {
-				e.printStackTrace();
-			}
+			sqlSession.close();
 		}
 	}
 
-	public static void updateAddress(Address address) {
-		Connection con=null;
-		PreparedStatement ps=null;
-		String sql="UPDATE [Person].[Address] SET [AddressLine1]=?,[City]=?,[StateProvinceID]=?,[PostalCode]=? where [AddressID]=?";
+	public void updateAddress(Address address) throws IOException {
+		setUp();
 		try {
-			con=DBUtil.getConnection();
-			ps=con.prepareStatement(sql);
-			
-			ps.setString(1, address.getAddressLine1());
-			ps.setString(2, address.getCity());
-			ps.setInt(3, address.getStateProvinceID());
-			ps.setString(4, address.getPostalCode());
-			ps.setInt(5, address.getAddressID());
-			
-			int flag=ps.executeUpdate();
-			if(flag>0) {
-				System.out.println("更新成功！");
-			}
-		}catch(SQLException e) {
-			e.printStackTrace();
-		}finally {
-			try {
-				DBUtil.closeConnection(con, ps, null);
-			}catch(SQLException e) {
-				e.printStackTrace();
-			}
+			sqlSession.update("MyMapper.updateAddress", address);
+		} finally {
+			sqlSession.close();
 		}
 	}
 }
