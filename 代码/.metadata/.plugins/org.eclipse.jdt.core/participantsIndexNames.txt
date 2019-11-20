@@ -11,6 +11,8 @@ D:\温浩宇\书稿\Web网站设计与开发教程（HTML5、JSP版 第2版）\课程资源\代码\.metada
 \JavaBean\src
 D:\温浩宇\书稿\Web网站设计与开发教程（HTML5、JSP版 第2版）\课程资源\代码\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2576562386.index
 \MyBatisBasics\src
+D:\温浩宇\书稿\Web网站设计与开发教程（HTML5、JSP版 第2版）\课程资源\代码\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3455161371.index
+\SSMBasics\src
 D:\温浩宇\书稿\Web网站设计与开发教程（HTML5、JSP版 第2版）\课程资源\代码\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1878840562.index
 \SpringMVCBasics\src
 D:\温浩宇\书稿\Web网站设计与开发教程（HTML5、JSP版 第2版）\课程资源\代码\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2562128089.index

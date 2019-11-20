@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:mybatis-spring="http://mybatis.org/schema/mybatis-spring"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+		http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://mybatis.org/schema/mybatis-spring
+		http://mybatis.org/schema/mybatis-spring-1.2.xsd
+		http://www.springframework.org/schema/tx
+		http://www.springframework.org/schema/tx/spring-tx-4.0.xsd
+		http://www.springframework.org/schema/context
+		http://www.springframework.org/schema/context/spring-context-4.0.xsd">
+
+	<bean id="UDiskBean" class="testSpring.UDisk">
+		<!-- 使用有参数构造方法，并赋参数值 -->
+		<constructor-arg name="name" value="MyDisk"></constructor-arg>
+		<!-- 使用get方法，为属性赋值 -->
+		<property name="size" value="300"></property>
+	</bean>
+
+	<bean id="ComputerBean" class="testSpring.Computer">
+		<!-- 使用有参数构造方法，并赋参数值 -->
+		<constructor-arg name="name" value="MyComputer"></constructor-arg>
+		<!-- 使用get方法，为属性赋值 -->
+		<property name="uDisk" ref="UDiskBean"></property>
+	</bean>
+
+	<context:component-scan
+		base-package="testSpring"></context:component-scan>
+
+	<!-- 数据库连接池 -->
+	<bean id="dataSource"
+		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="driverClassName"
+			value="com.microsoft.sqlserver.jdbc.SQLServerDriver" />
+		<property name="url"
+			value="jdbc:sqlserver://localhost:1433;DatabaseName=AdventureWorks2008R2" />
+		<property name="username" value="sa" />
+		<property name="password" value="123456" />
+	</bean>
+
+	<!-- spring和MyBatis整合 -->
+	<bean id="sqlSessionFactory"
+		class="org.mybatis.spring.SqlSessionFactoryBean">
+		<property name="dataSource" ref="dataSource" />
+		<!-- 自动扫描mapping.xml文件 -->
+		<property name="mapperLocations"
+			value="classpath:mappers/*.xml"></property>
+		<!--如果mybatis-config.xml没有特殊配置可以不需要下面的配置
+		<property name="configLocation" 
+			value="classpath:mybatis-config.xml" />
+		-->
+	</bean>
+
+	<!-- Mapper接口所在包名，Spring会自动查找其下的类 -->
+	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+		<property name="basePackage" value="dbexample" />
+		<property name="sqlSessionFactoryBeanName"
+			value="sqlSessionFactory"></property>
+	</bean>
+
+	<!-- (事务管理)transaction manager -->
+	<bean id="transactionManager"
+		class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+		<property name="dataSource" ref="dataSource" />
+	</bean>
+
+</beans>

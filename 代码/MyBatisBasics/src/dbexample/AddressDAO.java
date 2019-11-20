@@ -28,7 +28,7 @@ public class AddressDAO {
 		Address address = null;
 		setUp();
 		try {
-			address = sqlSession.selectOne("MyMapper.loadAddress", id);
+			address = sqlSession.selectOne("dbexample.AddressMapper.loadAddress", id);
 		} finally {
 			sqlSession.close();
 		}
@@ -39,7 +39,7 @@ public class AddressDAO {
 		List<Address> addressList = new ArrayList<Address>();
 		setUp();
 		try {
-			addressList = sqlSession.selectList("MyMapper.findAll");
+			addressList = sqlSession.selectList("dbexample.AddressMapper.findAll");
 		} finally {
 			sqlSession.close();
 		}
@@ -49,7 +49,7 @@ public class AddressDAO {
 	public void addAddress(Address address) throws IOException {
 		setUp();
 		try {
-			sqlSession.insert("MyMapper.addAddress", address);
+			sqlSession.insert("dbexample.AddressMapper.addAddress", address);
 		} finally {
 			sqlSession.close();
 		}
@@ -58,7 +58,7 @@ public class AddressDAO {
 	public void deleteAddress(int id) throws IOException {
 		setUp();
 		try {
-			sqlSession.delete("MyMapper.deleteAddress", id);
+			sqlSession.delete("dbexample.AddressMapper.deleteAddress", id);
 		} finally {
 			sqlSession.close();
 		}
@@ -67,7 +67,7 @@ public class AddressDAO {
 	public void updateAddress(Address address) throws IOException {
 		setUp();
 		try {
-			sqlSession.update("MyMapper.updateAddress", address);
+			sqlSession.update("dbexample.AddressMapper.updateAddress", address);
 		} finally {
 			sqlSession.close();
 		}

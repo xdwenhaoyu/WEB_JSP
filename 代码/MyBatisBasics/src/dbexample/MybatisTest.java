@@ -20,7 +20,7 @@ public class MybatisTest {
 		try {
 			// 操作CRUD，第一个参数：指定statement，规则：命名空间+“.”+statementId
 			// 第二个参数：指定传入sql的参数：这里是用户id
-			Address address = sqlSession.selectOne("MyMapper.loadAddress", 1);
+			Address address = sqlSession.selectOne("dbexample.AddressMapper.loadAddress", 1);
 			System.out.println(address.getAddressLine1());
 		} finally {
 			sqlSession.close();
